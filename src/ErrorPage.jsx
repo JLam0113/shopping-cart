@@ -4,7 +4,7 @@ const ErrorPage = () => {
   return (
     <div>
       <Navigation/>
-      <h1>Oh no, this route doesn't exist!</h1>
+      <h1>Oh no, this page doesn't exist!</h1>
     </div>
   );
 };
