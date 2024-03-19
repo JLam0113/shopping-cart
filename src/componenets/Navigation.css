@@ -1,0 +1,15 @@
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.navbar li {
+    padding: 10px;
+    display: inline-block;
+    background-color: purple;
+    margin: 5px;
+}
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+}
