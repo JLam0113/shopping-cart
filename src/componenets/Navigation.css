@@ -13,3 +13,7 @@
     text-decoration: none;
     color: #fff;
 }
+
+.navbar li:last-child{
+    float: right;
+}

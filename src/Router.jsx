@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import Shopping from "./componenets/Shopping";
+import Checkout from "./componenets/Checkout";
 import ErrorPage from "./ErrorPage";
 
 const Router = () => {
@@ -13,6 +14,10 @@ const Router = () => {
     {
       path: "/shopping",
       element: <Shopping />,
+    },
+    {
+      path: "/checkout",
+      element: <Checkout />,
     },
   ]);
 
