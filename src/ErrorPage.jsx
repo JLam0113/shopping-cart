@@ -1,9 +1,9 @@
 import Navigation from "./componenets/Navigation";
 
-const ErrorPage = () => {
+function ErrorPage ({total}) {
   return (
     <div>
-      <Navigation/>
+      <Navigation total={total}/>
       <h1>Oh no, this page doesn't exist!</h1>
     </div>
   );

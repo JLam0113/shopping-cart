@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import './Navigation.css'
 
+function Navigation({total}) {
 
-const Navigation = () => {
   return (
     <div>
       <nav className="navbar">
@@ -14,7 +14,9 @@ const Navigation = () => {
             <Link to="/shopping">Shop</Link>
           </li>
           <li>
-            <Link to="/checkout">Checkout</Link>
+            <Link to="/checkout">Checkout
+              {total > 0 ? ' (' + total + ')' : ''}
+            </Link>
           </li>
         </ul>
       </nav>

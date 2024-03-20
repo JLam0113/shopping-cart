@@ -1,10 +1,10 @@
 import Navigation from './Navigation';
 
-const Checkout = () => {
+function Checkout ({total}) {
 
     return (
         <div>
-         <Navigation/>
+         <Navigation total={total}/>
           <h1>Checkout</h1>
           <p>TODO</p>
         </div>

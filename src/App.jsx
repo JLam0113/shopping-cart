@@ -1,9 +1,9 @@
 import Navigation from "./componenets/Navigation";
 
-const App = () => {
+function App ({total}) {
   return (
     <div>
-     <Navigation/>
+     <Navigation total={total}/>
       <h1>Home Page</h1>
       <p>TODO ADD STUFF</p>
     </div>

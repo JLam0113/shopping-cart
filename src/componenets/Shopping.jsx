@@ -3,11 +3,10 @@ import { useState, useEffect } from 'react';
 import Card from './Card'
 import './Shopping.css'
 
-const Shopping = () => {
+function Shopping({total, onClick}){
 
   const [items, setItems] = useState([])
-  const [shoppingCart, setShoppingCart] = useState([])
-  const [total, setTotal] = useState(0)
+//  const [total, setTotal] = useState(parseInt(history.state.total) > 0 ? parseInt(history.state.total) : 0)
 
   useEffect(() => {
     const getItems = async (url) => {
@@ -32,20 +31,14 @@ const Shopping = () => {
     getItems('https://fakestoreapi.com/products/6')
   }, []);
 
-  function addtoCart(id, quantity, price){
-    setTotal(total + quantity)
-    setShoppingCart(shoppingCart => [...shoppingCart, {
-      id: id,
-      quantity: quantity,
-      price: price
-    }])
-  }
-
-  // TODO Add total items and items in cart to nav bar
+  useEffect(() => {
+    history.pushState({total: total, shoppingCart: shoppingCart}, "shopping cart details", "/checkout")
+    console.log(history.state)
+  }, [total, shoppingCart])
 
   return (
     <div>
-      <Navigation/>
+      <Navigation total={total}/>
       <h1>Shopping page!</h1>
       <ol className="cardsContainer">
         {items.map(element => (
@@ -55,7 +48,7 @@ const Shopping = () => {
             description={element.description}
             key={element.id}
             image={element.image}
-            onClick={addtoCart} />
+            onClick={onClick} />
         ))}
       </ol>
     </div>

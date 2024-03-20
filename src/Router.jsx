@@ -3,21 +3,37 @@ import App from "./App";
 import Shopping from "./componenets/Shopping";
 import Checkout from "./componenets/Checkout";
 import ErrorPage from "./ErrorPage";
+import { useState, useEffect } from 'react';
+
 
 const Router = () => {
+
+  const [shoppingCart, setShoppingCart] = useState([])
+  const [total, setTotal] = useState(0)
+
+  function addToCart(id, quantity, price){
+    setTotal(total + quantity)
+    setShoppingCart(shoppingCart => [...shoppingCart, {
+      id: id,
+      quantity: quantity,
+      price: price
+    }])
+  }
+
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <App />,
-      errorElement: <ErrorPage />,
+      element: <App total={total}/>,
+      errorElement: <ErrorPage total={total}/>,
     },
     {
       path: "/shopping",
-      element: <Shopping />,
+      element: <Shopping total={total}
+      onClick={addToCart}/>,
     },
     {
       path: "/checkout",
-      element: <Checkout />,
+      element: <Checkout total={total}/>,
     },
   ]);
 
