@@ -5,6 +5,7 @@ const App = () => {
     <div>
      <Navigation/>
       <h1>Home Page</h1>
+      <p>TODO ADD STUFF</p>
     </div>
   );
 };

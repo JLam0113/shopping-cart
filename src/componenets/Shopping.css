@@ -1,0 +1,22 @@
+ol {
+    list-style-type: none;
+  }
+  
+  .cardsContainer {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .card {
+    width: 25%;
+    border: solid 1px #535bf2;
+  }
+  
+  img {
+    width: 200px;
+  }
+  
+  input {
+    width: 30px;
+  }
