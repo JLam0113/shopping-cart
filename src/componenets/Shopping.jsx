@@ -6,6 +6,8 @@ import './Shopping.css'
 const Shopping = () => {
 
   const [items, setItems] = useState([])
+  const [shoppingCart, setShoppingCart] = useState([])
+  const [total, setTotal] = useState(0)
 
   useEffect(() => {
     const getItems = async (url) => {
@@ -30,9 +32,16 @@ const Shopping = () => {
     getItems('https://fakestoreapi.com/products/6')
   }, []);
 
-  function addtoCart(id, quantity){
-    console.log(quantity)
+  function addtoCart(id, quantity, price){
+    setTotal(total + quantity)
+    setShoppingCart(shoppingCart => [...shoppingCart, {
+      id: id,
+      quantity: quantity,
+      price: price
+    }])
   }
+
+  // TODO Add total items and items in cart to nav bar
 
   return (
     <div>

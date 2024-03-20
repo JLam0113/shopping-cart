@@ -2,10 +2,10 @@ import { useState } from 'react'
 
 function Cards({ id, title, price, description, image, onClick }) {
 
-    const [quantity, setQuantity] = useState('')
+    const [quantity, setQuantity] = useState(0)
 
     const handleButton = () => {
-        onClick(id, quantity);
+        onClick(id, parseInt(quantity), parseInt(price));
     }
 
     return <>
