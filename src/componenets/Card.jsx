@@ -5,7 +5,7 @@ function Cards({ id, title, price, description, image, onClick }) {
     const [quantity, setQuantity] = useState(0)
 
     const handleButton = () => {
-        onClick(id, parseInt(quantity), parseInt(price));
+        onClick(id, parseInt(quantity), parseInt(price), title, image);
     }
 
     return <>

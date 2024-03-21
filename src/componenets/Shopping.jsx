@@ -31,11 +31,6 @@ function Shopping({total, onClick}){
     getItems('https://fakestoreapi.com/products/6')
   }, []);
 
-  useEffect(() => {
-    history.pushState({total: total, shoppingCart: shoppingCart}, "shopping cart details", "/checkout")
-    console.log(history.state)
-  }, [total, shoppingCart])
-
   return (
     <div>
       <Navigation total={total}/>

@@ -1,12 +1,22 @@
 import Navigation from './Navigation';
+import CheckoutCard from './CheckoutCard';
 
-function Checkout ({total}) {
+function Checkout ({ total, items}) {
 
     return (
         <div>
          <Navigation total={total}/>
           <h1>Checkout</h1>
-          <p>TODO</p>
+          <ol className="checkoutContainer">
+        {items.map(element => (
+          <CheckoutCard 
+            key={element.id}
+            title={element.title}
+            price={element.price}
+            quantity={element.quantity}
+            image={element.image} />
+        ))}
+      </ol>
         </div>
       );
 };

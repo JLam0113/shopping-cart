@@ -11,12 +11,15 @@ const Router = () => {
   const [shoppingCart, setShoppingCart] = useState([])
   const [total, setTotal] = useState(0)
 
-  function addToCart(id, quantity, price){
+  // TODO handle duplicate object already in cart
+  function addToCart(id, quantity, price, title, image){
     setTotal(total + quantity)
     setShoppingCart(shoppingCart => [...shoppingCart, {
       id: id,
       quantity: quantity,
-      price: price
+      price: price,
+      title: title,
+      image: image
     }])
   }
 
@@ -33,7 +36,9 @@ const Router = () => {
     },
     {
       path: "/checkout",
-      element: <Checkout total={total}/>,
+      element: <Checkout total={total}
+      items={shoppingCart}
+      />,
     },
   ]);
 
